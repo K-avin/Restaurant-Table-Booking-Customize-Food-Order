@@ -10,16 +10,6 @@ class AdminController extends Controller
     {
         return view('admin/index');
     }
-    // Restaurant
-    public function restaurantIndex()
-    {
-        return view('admin/restaurant/index');
-    }
-    public function addRestaurant()
-    {
-        return view('admin/restaurant/add');
-    }
-
     // Order
     public function ordersIndex()
     {

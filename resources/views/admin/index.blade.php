@@ -18,10 +18,10 @@
       </div>
       <div>
         <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-          Total clients
+          Total orders
         </p>
         <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-          6389
+          63
         </p>
       </div>
     </div>
@@ -36,10 +36,10 @@
       </div>
       <div>
         <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-          Account balance
+          Complete orders
         </p>
         <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-          $ 46,760.89
+          30
         </p>
       </div>
     </div>
@@ -54,10 +54,10 @@
       </div>
       <div>
         <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-          New sales
+          Pending orders
         </p>
         <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-          376
+          37
         </p>
       </div>
     </div>
@@ -72,10 +72,10 @@
       </div>
       <div>
         <p class="mb-2 text-sm font-medium text-gray-600 dark:text-gray-400">
-          Pending contacts
+          Canceled orders
         </p>
         <p class="text-lg font-semibold text-gray-700 dark:text-gray-200">
-          35
+          26
         </p>
       </div>
     </div>

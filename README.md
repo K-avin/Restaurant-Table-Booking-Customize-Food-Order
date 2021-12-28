@@ -1,0 +1,2 @@
+# Restaurant-Table-Booking-Customize-Food-Order
+This project seeks to allow consumers to submit online questions and get services by supplying the necessary information using a mobile application system. Several smartphones and tablets make use of it. Users may use this app to reserve a table and place an order for meals at a specific day and time while sitting anywhere. The waiter can visit his schedule once the admin maintains the timetable of ordering tables and food.

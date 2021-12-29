@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\DishesController;
 use App\Http\Controllers\DisheCategoryController;
+use App\Http\Controllers\TableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,6 @@ Route::get('/dishes', [DishesController::class, 'dishesShow']);
 
 // Dishes Category
 Route::get('/categorys', [DisheCategoryController::class, 'categorysShow']);
+
+// Tables
+Route::get('/tables', [TableController::class, 'tablesShow']);

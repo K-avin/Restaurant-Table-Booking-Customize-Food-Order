@@ -21,16 +21,6 @@ class AdminController extends Controller
     {
         return view('admin/customer/index');
     }
-
-    // Tables
-    public function tablesIndex()
-    {
-        return view('admin/table/index');
-    }
-    public function addTable()
-    {
-        return view('admin/table/add');
-    }
     
 }
 

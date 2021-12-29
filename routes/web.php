@@ -44,5 +44,9 @@ Route::get('/delete-category/{id}', [App\Http\Controllers\DisheCategoryControlle
 Route::get('/customers', [App\Http\Controllers\AdminController::class, 'customersIndex'])->name('customer.index')->middleware('auth');
 
 // Tables
-Route::get('/tables', [App\Http\Controllers\AdminController::class, 'tablesIndex'])->name('table.index')->middleware('auth');
-Route::get('/table/add', [App\Http\Controllers\AdminController::class, 'addTable'])->name('table.add')->middleware('auth');
+Route::get('/tables', [App\Http\Controllers\TableController::class, 'tablesIndex'])->name('table.index')->middleware('auth');
+Route::get('/table/add', [App\Http\Controllers\TableController::class, 'addTable'])->name('table.add')->middleware('auth');
+Route::get('/table/edit/{id}', [App\Http\Controllers\TableController::class, 'editTable'])->name('table.edit')->middleware('auth');
+Route::post('/table', [App\Http\Controllers\TableController::class, 'storeTable'])->name('add-table')->middleware('auth');
+Route::post('/update-table/{id}', [App\Http\Controllers\TableController::class, 'update'])->name('edit-table')->middleware('auth');;
+Route::get('/delete-table/{id}', [App\Http\Controllers\TableController::class, 'destroy'])->middleware('auth');

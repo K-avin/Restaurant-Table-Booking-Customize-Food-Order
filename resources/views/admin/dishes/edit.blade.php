@@ -19,7 +19,7 @@
   </div>
   @endif 
   <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-    <form action="{{route('add-dishes')}}" method="post" enctype="multipart/form-data" class="w-full max-w-lg">
+    <form action="{{URL('update-dish/'.$dish->id)}}" method="post" enctype="multipart/form-data" class="w-full max-w-lg">
       @csrf
       <div class="flex flex-wrap -mx-3 mb-3">
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -28,6 +28,7 @@
               </label>
               <div class="relative">
                 <select name="restaurant" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                  {{-- <option value="{{$dish->restaurant}}">{{$dish->restaurant}}</option> --}}
                   @foreach ($restaurant as $rest)
                   <option value="{{$rest->name}}">{{$rest->name}}</option>
                   @endforeach
@@ -38,7 +39,7 @@
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
             Dishe Name
           </label>
-          <input name="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Enter the restaurant location">
+          <input value="{{$dish->name}}" name="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Enter the restaurant location">
         </div>
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
@@ -56,11 +57,11 @@
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
             Price
           </label>
-          <input name="price" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Enter the restaurant location">
+          <input value="{{$dish->price}}" name="price" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Enter the restaurant location">
         </div>
         <div class="w-full md:w-1/2 px-3">
           <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="user_avatar">Upload file</label>
-          <input name="image" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+          <input value="{{$dish->image}}" name="image" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" aria-describedby="user_avatar_help" id="user_avatar" type="file">
         </div>
 
         <div class="w-full md:w-1 px-3 mt-6 mb-3">

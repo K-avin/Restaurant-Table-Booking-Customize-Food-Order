@@ -16,16 +16,6 @@ class AdminController extends Controller
         return view('admin/orders/index');
     }
 
-    // Dishes
-    public function dishesIndex()
-    {
-        return view('admin/dishes/index');
-    }
-    public function addDishes()
-    {
-        return view('admin/dishes/add');
-    }
-
     // Customers
     public function customersIndex()
     {

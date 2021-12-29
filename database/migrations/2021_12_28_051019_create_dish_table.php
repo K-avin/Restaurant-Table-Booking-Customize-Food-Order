@@ -18,7 +18,7 @@ class CreateDishTable extends Migration
             $table->string('name');
             $table->string('restaurant');
             $table->string('category');
-            $table->string('price');
+            $table->decimal('price',9,2);
             $table->string('image');
             $table->timestamps();
         });

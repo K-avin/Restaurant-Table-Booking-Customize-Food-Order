@@ -17,45 +17,27 @@
         <thead>
           <tr
             class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-            <th class="px-4 py-3">Dishes Name</th>
-            <th class="px-4 py-3">Restaurant</th>
-            <th class="px-4 py-3">Category</th>
-            <th class="px-4 py-3">Price</th>
-            <th class="px-4 py-3">Action</th>
+            <th class="px-4 py-3">Category Name</th>
+            <th class="px-4 py-3">Created at</th>
+            <th class="px-4 py-3">Actions</th>
+
           </tr>
         </thead>
         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-          @foreach ($dishes as $dish)
+        @foreach ($categorys as $category)
           <tr class="text-gray-700 dark:text-gray-400">
-            <td class="px-4 py-3">
-              <div class="flex items-center text-sm">
-                <!-- Avatar with inset shadow -->
-                <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                  <img class="object-cover w-full h-full rounded-full"
-                    src="{{asset('storage/'.$dish->image)}}"
-                    alt="" loading="lazy" />
-                  <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
-                </div>
-                <div>
-                  <p class="font-semibold">{{$dish->name}}</p>
-                </div>
-              </div>
+            <td class="px-4 py-3 text-sm">
+              {{$category->name}}
             </td>
             <td class="px-4 py-3 text-sm">
-              {{$dish->restaurant}}
+                {{$category->created_at}}
             </td>
             <td class="px-4 py-3 text-sm">
-              {{$dish->category}}
-            </td>
-            <td class="px-4 py-3 text-sm">
-              Rs.{{$dish->price}}
-            </td>
-            <td class="px-4 py-3 text-sm">
-              <span class="text-purple-600 mr-1"><a href="{{url('dish/edit/'.$dish->id)}}">Edit</a></span>
-              <span class="text-red-600"><a href={{url('delete-dish/'.$dish->id)}}>Delete</a></span>
+              <span class="text-purple-600 mr-1"><a href="{{url('dish/category/edit/'.$category->id)}}">Edit</a></span>
+              <span class="text-red-600"><a href="{{url('delete-category/'.$category->id)}}">Delete</a></span>
             </td>
           </tr>
-          @endforeach
+        @endforeach
         </tbody>
       </table>
     </div>

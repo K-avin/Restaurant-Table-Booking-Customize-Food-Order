@@ -5,6 +5,11 @@
   <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
     Customers
   </h2>
+  @if ($message = Session::get('success'))
+  <div class="relative py-3 pl-2 mb-4 pr-10 leading-normal text-green-700 bg-green-100 rounded-lg" role="alert">    
+      <p>{{ $message }}</p>
+  </div>
+  @endif
   <!-- Table -->
   <div class="w-full overflow-hidden rounded-lg shadow-xs">
     <div class="w-full overflow-x-auto">
@@ -19,6 +24,7 @@
           </tr>
         </thead>
         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+          @foreach ($customers as $customer)
           <tr class="text-gray-700 dark:text-gray-400">
             <td class="px-4 py-3">
               <div class="flex items-center text-sm">
@@ -30,23 +36,44 @@
                   <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                 </div>
                 <div>
-                  <p class="font-semibold">Hans Burger</p>
+                  <p class="font-semibold">{{$customer->name}}</p>
                   <p class="text-xs text-gray-600 dark:text-gray-400">
-                    Active user
+                    @if ($customer->staus == 1)
+                    Active user   
+                    @else
+                    Deactivated                 
+                    @endif
+                    
                   </p>
                 </div>
               </div>
             </td>
             <td class="px-4 py-3 text-sm">
-              $ 863.45
+              {{$customer->email}}
             </td>
             <td class="px-4 py-3 text-sm">
-              6/10/2020
+              {{$customer->created_at}}
             </td>
             <td class="px-4 py-3 text-sm">
-              6/10/2020
+              <span class="text-purple-600 mr-1">
+                @if ($customer->staus == 1)
+                <form action="{{URL('update-customer/'.$customer->id)}}" method="post" enctype="multipart/form-data">
+                  @csrf
+                  <input hidden name="staus" value="0" type="text">                
+                  <button class="appearance-none">Deactive</button>
+                </form>
+                  @else
+                  <form action="{{URL('update-customer/'.$customer->id)}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input hidden name="staus" value="1" type="text">                
+                    <button class="appearance-none">Active</button>
+                  </form>                                    
+                @endif
+              </span>
+              <span class="text-red-600"><a href="{{url('delete-customer/'.$customer->id)}}">Remove</a></span>
             </td>
-          </tr>
+          </tr>              
+          @endforeach          
         </tbody>
       </table>
     </div>

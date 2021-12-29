@@ -7,6 +7,7 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\DishesController;
 use App\Http\Controllers\DisheCategoryController;
 use App\Http\Controllers\TableController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,8 @@ Route::get('/categorys', [DisheCategoryController::class, 'categorysShow']);
 
 // Tables
 Route::get('/tables', [TableController::class, 'tablesShow']);
+
+// Customer
+Route::post('auth/register', [CustomerController::class, 'registerCustomer']);
+Route::post('auth/login', [CustomerController::class, 'customerLogin']);
+

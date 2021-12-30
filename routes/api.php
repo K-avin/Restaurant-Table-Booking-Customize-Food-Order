@@ -8,7 +8,7 @@ use App\Http\Controllers\DishesController;
 use App\Http\Controllers\DisheCategoryController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\CustomerController;
-
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -40,3 +40,6 @@ Route::get('/tables', [TableController::class, 'tablesShow']);
 Route::post('auth/register', [CustomerController::class, 'registerCustomer']);
 Route::post('auth/login', [CustomerController::class, 'customerLogin']);
 
+// Order
+Route::get('/orders/{id}', [OrderController::class, 'ordersShow']);
+Route::post('/placeorder', [OrderController::class, 'storeOrder']);
